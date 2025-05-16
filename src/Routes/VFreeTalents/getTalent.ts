@@ -8,6 +8,7 @@ router.get("/VFreeTalents/getTalent", async (req: any, res: any) => {
   if (!TALENT_DATA) return res.send("Talent isn't registered or doesn't exist!");
 
   delete TALENT_DATA["_id"];
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.send(TALENT_DATA);
 });
 
